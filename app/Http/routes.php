@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::auth();
+
+// Provide controller methods with object instead of ID
+//Route::model('products', 'Product');
+
+Route::get('/', 'HomeController@index');
+
+################
+### PRODUCTS ###
+################
+Route::get('products/{product}', 'ProductsController@show');
+Route::resource('products', 'ProductsController', ['except' => ['show']]);

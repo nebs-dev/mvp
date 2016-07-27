@@ -11,11 +11,17 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(function (mix) {
     mix.sass('app.scss')
 
         .scripts([
-         'theme/*.js'
+            'theme/jquery.js',
+            'theme/bootstrap.min.js',
+            'theme/jquery.dataTables.min.js',
+            'theme/dataTables.bootstrap.min.js',
+            'theme/dataTables.responsive.js',
+            'theme/*.js',
+            'theme/sb-admin-2.js'
         ], './public/js/theme.js')
 
         .scripts([
@@ -23,7 +29,7 @@ elixir(function(mix) {
         ], './public/js/libs.js')
 
         .styles([
-         'theme/*.css'
+            'theme/*.css'
         ], './public/css/theme.css')
 
         .styles([

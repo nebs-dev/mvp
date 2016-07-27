@@ -10,6 +10,16 @@ class Product extends Model {
      * Fillable fields for the flyer
      * @var array
      */
-    protected $fillable = ['street', 'city', 'state', 'country', 'zip', 'price', 'description'];
+    protected $fillable = ['code', 'description', 'audio', 'video'];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'id';
+    }
 
 }
